@@ -1,4 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
+<?xml-model href="rfc7991bis.rnc"?>
+<!DOCTYPE rfc [
+  <!ENTITY nbsp    "&#160;">
+  <!ENTITY zwsp   "&#8203;">
+  <!ENTITY nbhy   "&#8209;">
+  <!ENTITY wj     "&#8288;">
+]>
 <rfc
   xmlns:xi="http://www.w3.org/2001/XInclude"
   category="std"
@@ -10,6 +17,7 @@
   xml:lang="en"
   version="3"
   consensus="true">
+  
   <front>
     <title abbrev="PIM Type Extension and Reserved Bits">PIM Message Type Space Extension and Reserved Bits</title>
     <seriesInfo name="Internet-Draft" value="draft-venaas-rfc8736bis-00"/>

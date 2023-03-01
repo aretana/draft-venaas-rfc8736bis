@@ -1,11 +1,18 @@
 <?xml version='1.0' encoding='utf-8'?>
-<rfc xmlns:xi="http://www.w3.org/2001/XInclude" version="3" category="std" consensus="true" docName="draft-ietf-pim-reserved-bits-04" indexInclude="true" ipr="trust200902" number="8736" obsoletes="6166" prepTime="2020-02-28T19:10:44" scripts="Common,Latin" sortRefs="true" submissionType="IETF" symRefs="true" tocDepth="3" tocInclude="true" updates="3973, 5015, 5059, 6754, 7761, 8364" xml:lang="en">
-  <link href="https://datatracker.ietf.org/doc/draft-ietf-pim-reserved-bits-04" rel="prev"/>
-  <link href="https://dx.doi.org/10.17487/rfc8736" rel="alternate"/>
-  <link href="urn:issn:2070-1721" rel="alternate"/>
+<rfc
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  category="std"
+  docName="draft-venaas-rfc8736bis-00"
+  ipr="trust200902"
+  obsoletes="8736"
+  updates="3973, 5015, 5059, 6754, 7761, 8364"
+  submissionType="IETF"
+  xml:lang="en"
+  version="3"
+  consensus="true">
   <front>
     <title abbrev="PIM Type Extension and Reserved Bits">PIM Message Type Space Extension and Reserved Bits</title>
-    <seriesInfo name="RFC" value="8736" stream="IETF"/>
+    <seriesInfo name="Internet-Draft" value="draft-venaas-rfc8736bis-00"/>
     <author fullname="Stig Venaas" initials="S." surname="Venaas">
       <organization showOnFrontPage="true">Cisco Systems, Inc.</organization>
       <address>
@@ -34,7 +41,7 @@
         <uri/>
       </address>
     </author>
-    <date month="02" year="2020"/>
+    <date month="03" year="2023"/>
     <area>Routing</area>
     <keyword>Multicast</keyword>
     <abstract pn="section-abstract">
@@ -50,47 +57,9 @@
       further updates RFCs 7761 and 3973, along with RFCs 5015, 5059,
       6754, and 8364, by specifying the use of the currently reserved
       bits for each PIM message.</t>
-      <t pn="section-abstract-3">This document obsoletes RFC 6166.</t>
+      <t pn="section-abstract-3">This document obsoletes RFC 8736.</t>
     </abstract>
-    <boilerplate>
-      <section anchor="status-of-memo" numbered="false" removeInRFC="false" toc="exclude" pn="section-boilerplate.1">
-        <name slugifiedName="name-status-of-this-memo">Status of This Memo</name>
-        <t pn="section-boilerplate.1-1">
-            This is an Internet Standards Track document.
-        </t>
-        <t pn="section-boilerplate.1-2">
-            This document is a product of the Internet Engineering Task Force
-            (IETF).  It represents the consensus of the IETF community.  It has
-            received public review and has been approved for publication by
-            the Internet Engineering Steering Group (IESG).  Further
-            information on Internet Standards is available in Section 2 of 
-            RFC 7841.
-        </t>
-        <t pn="section-boilerplate.1-3">
-            Information about the current status of this document, any
-            errata, and how to provide feedback on it may be obtained at
-            <eref target="https://www.rfc-editor.org/info/rfc8736" brackets="none"/>.
-        </t>
-      </section>
-      <section anchor="copyright" numbered="false" removeInRFC="false" toc="exclude" pn="section-boilerplate.2">
-        <name slugifiedName="name-copyright-notice">Copyright Notice</name>
-        <t pn="section-boilerplate.2-1">
-            Copyright (c) 2020 IETF Trust and the persons identified as the
-            document authors. All rights reserved.
-        </t>
-        <t pn="section-boilerplate.2-2">
-            This document is subject to BCP 78 and the IETF Trust's Legal
-            Provisions Relating to IETF Documents
-            (<eref target="https://trustee.ietf.org/license-info" brackets="none"/>) in effect on the date of
-            publication of this document. Please review these documents
-            carefully, as they describe your rights and restrictions with
-            respect to this document. Code Components extracted from this
-            document must include Simplified BSD License text as described in
-            Section 4.e of the Trust Legal Provisions and are provided without
-            warranty as described in the Simplified BSD License.
-        </t>
-      </section>
-    </boilerplate>
+
     <toc>
       <section anchor="toc" numbered="false" removeInRFC="false" toc="exclude" pn="section-toc.1">
         <name slugifiedName="name-table-of-contents">Table of Contents</name>
@@ -163,32 +132,31 @@
       per-message-type usage. </t>
       <t pn="section-1-3">This document updates <xref target="RFC7761" format="default" sectionFormat="of" derivedContent="RFC7761"/> and
       <xref target="RFC3973" format="default" sectionFormat="of" derivedContent="RFC3973"/> by defining the use of the
-      currently Reserved field 
-      in the PIM common header. This document further updates <xref target="RFC7761" format="default" sectionFormat="of" derivedContent="RFC7761"/> and <xref target="RFC3973" format="default" sectionFormat="of" derivedContent="RFC3973"/>, along with <xref target="RFC5015" format="default" sectionFormat="of" derivedContent="RFC5015"/>, <xref target="RFC5059" format="default" sectionFormat="of" derivedContent="RFC5059"/>, <xref target="RFC6754" format="default" sectionFormat="of" derivedContent="RFC6754"/>, 
+      currently Reserved field
+      in the PIM common header. This document further updates <xref target="RFC7761" format="default" sectionFormat="of" derivedContent="RFC7761"/> and <xref target="RFC3973" format="default" sectionFormat="of" derivedContent="RFC3973"/>, along with <xref target="RFC5015" format="default" sectionFormat="of" derivedContent="RFC5015"/>, <xref target="RFC5059" format="default" sectionFormat="of" derivedContent="RFC5059"/>, <xref target="RFC6754" format="default" sectionFormat="of" derivedContent="RFC6754"/>,
       and <xref target="RFC8364" format="default" sectionFormat="of" derivedContent="RFC8364"/>, by specifying the use of the currently
       reserved bits for each PIM message.</t>
-      <t pn="section-1-4">The currently defined PIM message types are in the range from 0 to
-      15. That type space is almost exhausted. Message type 15 was reserved by
+      <t pn="section-1-4">The originally defined PIM message types were in the range from 0 to
+      15. Message type 15 had been reserved by
       <xref target="RFC6166" format="default" sectionFormat="of" derivedContent="RFC6166"/> for type space extension. In
       <xref target="ext" format="default" sectionFormat="of" derivedContent="Section 5"/>, this document specifies the use
-      of the Flag Bits for 
-      message types 13, 14, and 15 in order to extend the PIM type space. This
-      document obsoletes <xref target="RFC6166" format="default" sectionFormat="of" derivedContent="RFC6166"/>.</t>
+      of the Flag Bits for
+      message types 13, 14, and 15 in order to extend the PIM type space. The type space extension in <xref target="RFC6166" format="default" sectionFormat="of" derivedContent="RFC6166"/> was made obsolete by <xref target="RFC8736" format="default" sectionFormat="of" derivedContent="RFC8736"/>.  This document obsoletes <xref target="RFC8736" format="default" sectionFormat="of" derivedContent="RFC8736"/>.</t>
     </section>
     <section numbered="true" toc="include" removeInRFC="false" pn="section-2">
       <name slugifiedName="name-conventions-used-in-this-do">Conventions Used in This Document</name>
       <t pn="section-2-1">
     The key words "<bcp14>MUST</bcp14>", "<bcp14>MUST NOT</bcp14>",
     "<bcp14>REQUIRED</bcp14>", "<bcp14>SHALL</bcp14>", "<bcp14>SHALL NOT</bcp14>", "<bcp14>SHOULD</bcp14>", "<bcp14>SHOULD NOT</bcp14>",
-    "<bcp14>RECOMMENDED</bcp14>", "<bcp14>NOT RECOMMENDED</bcp14>", 
+    "<bcp14>RECOMMENDED</bcp14>", "<bcp14>NOT RECOMMENDED</bcp14>",
     "<bcp14>MAY</bcp14>", and "<bcp14>OPTIONAL</bcp14>" in this document are to be interpreted as
-    described in BCP 14 <xref target="RFC2119" format="default" sectionFormat="of" derivedContent="RFC2119"/> <xref target="RFC8174" format="default" sectionFormat="of" derivedContent="RFC8174"/>                            
+    described in BCP 14 <xref target="RFC2119" format="default" sectionFormat="of" derivedContent="RFC2119"/> <xref target="RFC8174" format="default" sectionFormat="of" derivedContent="RFC8174"/>
     when, and only when, they appear in all capitals, as shown here.</t>
     </section>
     <section numbered="true" toc="include" removeInRFC="false" pn="section-3">
       <name slugifiedName="name-pim-header-common-format">PIM Header Common Format</name>
       <t pn="section-3-1">The common PIM header is defined in <xref target="RFC7761" sectionFormat="of" section="4.9" format="default" derivedLink="https://rfc-editor.org/rfc/rfc7761#section-4.9" derivedContent="RFC7761"/>. This document
-      updates the definition of the Reserved 
+      updates the definition of the Reserved
       field and refers to that field as "PIM message type Flag Bits" or, simply,
       "Flag Bits". The new common header format is as below. </t>
       <figure align="left" suppress-title="false" pn="figure-1">
@@ -207,7 +175,7 @@
     <section anchor="flagbits" numbered="true" toc="include" removeInRFC="false" pn="section-4">
       <name slugifiedName="name-flag-bit-definitions">Flag Bit Definitions</name>
       <t pn="section-4-1">Unless otherwise specified, all the flag bits for each PIM type are
-      Reserved <xref target="RFC8126" format="default" sectionFormat="of" derivedContent="RFC8126"/>. 
+      Unassigned <xref target="RFC8126" format="default" sectionFormat="of" derivedContent="RFC8126"/>.
       They <bcp14>MUST</bcp14> be set to zero on
       transmission, and they <bcp14>MUST</bcp14> be ignored upon receipt. The specification
       of a new PIM type <bcp14>MUST</bcp14> indicate whether the bits should be treated
@@ -231,20 +199,20 @@
         <name slugifiedName="name-flag-bits-for-type-4-bootst">Flag Bits for Type 4 (Bootstrap)</name>
         <t pn="section-4.1-1">PIM message type 4 (Bootstrap) <xref target="RFC5059" format="default" sectionFormat="of" derivedContent="RFC5059"/> defines
         flag bit 7 as No-Forward. The usage of the bit is defined in that
-        document. The remaining flag bits are reserved.</t>
+        document. The remaining flag bits are unassigned.</t>
       </section>
       <section numbered="true" toc="include" removeInRFC="false" pn="section-4.2">
         <name slugifiedName="name-flag-bits-for-type-10-df-el">Flag Bits for Type 10 (DF Election)</name>
-        <t pn="section-4.2-1">PIM message type 10 (DF Election) <xref target="RFC5015" format="default" sectionFormat="of" derivedContent="RFC5015"/> 
+        <t pn="section-4.2-1">PIM message type 10 (DF Election) <xref target="RFC5015" format="default" sectionFormat="of" derivedContent="RFC5015"/>
         specifies that the four most significant flag bits (bits 4-7) are to
         be used as a subtype. The usage of those bits is defined in that
-        document. The remaining flag bits are reserved.</t>
+        document. The remaining flag bits are unassigned.</t>
       </section>
       <section numbered="true" toc="include" removeInRFC="false" pn="section-4.3">
         <name slugifiedName="name-flag-bits-for-type-12-pfm">Flag Bits for Type 12 (PFM)</name>
-        <t pn="section-4.3-1">PIM message type 12 (PIM Flooding Mechanism) <xref target="RFC8364" format="default" sectionFormat="of" derivedContent="RFC8364"/> defines flag bit 
+        <t pn="section-4.3-1">PIM message type 12 (PIM Flooding Mechanism) <xref target="RFC8364" format="default" sectionFormat="of" derivedContent="RFC8364"/> defines flag bit
         7 as No-Forward. The usage of the bit is defined in that document. The
-        remaining flag bits are reserved.</t>
+        remaining flag bits are unsassigned.</t>
       </section>
       <section numbered="true" toc="include" removeInRFC="false" pn="section-4.4">
         <name slugifiedName="name-flag-bits-for-types-13-14-a">Flag Bits for Types 13, 14, and 15 (Type Space Extension)</name>
@@ -258,8 +226,8 @@
       future PIM extensions. This is achieved by defining a new Subtype field
       (see Figure 3) using the four most significant flag bits (bits 4-7). The
       notation type.subtype is used to reference these new extended types. The
-      remaining four flag bits (bits 0-3) are reserved to be used by each
-      extended type (abbreviated as FB below). </t>
+      remaining four flag bits (bits 0-3, abbreviated as FB below) are to be defined by each
+      extended type. </t>
       <figure align="left" suppress-title="false" pn="figure-3">
         <name slugifiedName="name-subtypes">Subtypes</name>
         <artwork name="" type="" align="left" alt="" pn="section-5-2.1">
@@ -282,12 +250,18 @@
       <name slugifiedName="name-iana-considerations">IANA Considerations</name>
       <t pn="section-7-1">This document updates the "PIM Message Types" registry to indicate
       which flag bits are defined for use by each of the PIM message types.
-      The registry now references this document. The registration policy remains
+      The registration policy remains
       IETF Review <xref target="RFC8126" format="default" sectionFormat="of" derivedContent="RFC8126"/>. Assignments into
-      this registry <bcp14>MUST</bcp14> define any 
+      this registry <bcp14>MUST</bcp14> define any
       non-default usage (see <xref target="flagbits" format="default" sectionFormat="of" derivedContent="Section 4"/>) of
       the flag bits in addition to the type.</t>
-      <t pn="section-7-2">The updated "PIM Message Types" registry is shown below.</t>
+      <t>
+        Because this document obsoletes RFC 8736, IANA is asked to change all
+        registration information that references <xref target="RFC8736"
+        format="default" sectionFormat="of" derivedContent="RFC8736"/> to
+        instead reference [this document].
+      </t>
+      <t>The updated "PIM Message Types" registry is shown below.</t>
       <table anchor="PIM-registry" align="center" pn="table-1">
         <name slugifiedName="name-updated-pim-message-types-r">Updated PIM Message Types Registry</name>
         <thead>
@@ -302,35 +276,35 @@
           <tr>
             <td align="left" colspan="1" rowspan="1">0</td>
             <td align="left" colspan="1" rowspan="1">Hello</td>
-            <td align="left" colspan="1" rowspan="1">0-7: Reserved</td>
+            <td align="left" colspan="1" rowspan="1">0-7: Unassigned</td>
             <td align="left" colspan="1" rowspan="1">
               <xref target="RFC3973" format="default" sectionFormat="of" derivedContent="RFC3973"/><xref target="RFC7761" format="default" sectionFormat="of" derivedContent="RFC7761"/></td>
           </tr>
           <tr>
             <td align="left" colspan="1" rowspan="1">1</td>
             <td align="left" colspan="1" rowspan="1">Register</td>
-            <td align="left" colspan="1" rowspan="1">0-7: Reserved</td>
+            <td align="left" colspan="1" rowspan="1">0-7: Unassigned</td>
             <td align="left" colspan="1" rowspan="1">
               <xref target="RFC7761" format="default" sectionFormat="of" derivedContent="RFC7761"/></td>
           </tr>
           <tr>
             <td align="left" colspan="1" rowspan="1">2</td>
             <td align="left" colspan="1" rowspan="1">Register Stop</td>
-            <td align="left" colspan="1" rowspan="1">0-7: Reserved</td>
+            <td align="left" colspan="1" rowspan="1">0-7: Unassigned</td>
             <td align="left" colspan="1" rowspan="1">
               <xref target="RFC7761" format="default" sectionFormat="of" derivedContent="RFC7761"/></td>
           </tr>
           <tr>
             <td align="left" colspan="1" rowspan="1">3</td>
             <td align="left" colspan="1" rowspan="1">Join/Prune</td>
-            <td align="left" colspan="1" rowspan="1">0-7: Reserved</td>
+            <td align="left" colspan="1" rowspan="1">0-7: Unassigned</td>
             <td align="left" colspan="1" rowspan="1">
               <xref target="RFC3973" format="default" sectionFormat="of" derivedContent="RFC3973"/><xref target="RFC7761" format="default" sectionFormat="of" derivedContent="RFC7761"/></td>
           </tr>
           <tr>
             <td rowspan="2" align="left" colspan="1">4</td>
             <td rowspan="2" align="left" colspan="1">Bootstrap</td>
-            <td align="left" colspan="1" rowspan="1">0-6: Reserved</td>
+            <td align="left" colspan="1" rowspan="1">0-6: Unassigned</td>
             <td align="left" colspan="1" rowspan="1">
               <xref target="RFC5059" format="default" sectionFormat="of" derivedContent="RFC5059"/><xref target="RFC7761" format="default" sectionFormat="of" derivedContent="RFC7761"/></td>
           </tr>
@@ -342,42 +316,42 @@
           <tr>
             <td align="left" colspan="1" rowspan="1">5</td>
             <td align="left" colspan="1" rowspan="1">Assert</td>
-            <td align="left" colspan="1" rowspan="1">0-7: Reserved</td>
+            <td align="left" colspan="1" rowspan="1">0-7: Unassigned</td>
             <td align="left" colspan="1" rowspan="1">
               <xref target="RFC3973" format="default" sectionFormat="of" derivedContent="RFC3973"/><xref target="RFC7761" format="default" sectionFormat="of" derivedContent="RFC7761"/></td>
           </tr>
           <tr>
             <td align="left" colspan="1" rowspan="1">6</td>
             <td align="left" colspan="1" rowspan="1">Graft</td>
-            <td align="left" colspan="1" rowspan="1">0-7: Reserved</td>
+            <td align="left" colspan="1" rowspan="1">0-7: Unassigned</td>
             <td align="left" colspan="1" rowspan="1">
               <xref target="RFC3973" format="default" sectionFormat="of" derivedContent="RFC3973"/></td>
           </tr>
           <tr>
             <td align="left" colspan="1" rowspan="1">7</td>
             <td align="left" colspan="1" rowspan="1">Graft-Ack</td>
-            <td align="left" colspan="1" rowspan="1">0-7: Reserved</td>
+            <td align="left" colspan="1" rowspan="1">0-7: Unassigned</td>
             <td align="left" colspan="1" rowspan="1">
               <xref target="RFC3973" format="default" sectionFormat="of" derivedContent="RFC3973"/></td>
           </tr>
           <tr>
             <td align="left" colspan="1" rowspan="1">8</td>
             <td align="left" colspan="1" rowspan="1">Candidate RP Advertisement</td>
-            <td align="left" colspan="1" rowspan="1">0-7: Reserved</td>
+            <td align="left" colspan="1" rowspan="1">0-7: Unassigned</td>
             <td align="left" colspan="1" rowspan="1">
               <xref target="RFC7761" format="default" sectionFormat="of" derivedContent="RFC7761"/></td>
           </tr>
           <tr>
             <td align="left" colspan="1" rowspan="1">9</td>
             <td align="left" colspan="1" rowspan="1">State Refresh</td>
-            <td align="left" colspan="1" rowspan="1">0-7: Reserved</td>
+            <td align="left" colspan="1" rowspan="1">0-7: Unassigned</td>
             <td align="left" colspan="1" rowspan="1">
               <xref target="RFC3973" format="default" sectionFormat="of" derivedContent="RFC3973"/></td>
           </tr>
           <tr>
             <td rowspan="2" align="left" colspan="1">10</td>
             <td rowspan="2" align="left" colspan="1">DF Election</td>
-            <td align="left" colspan="1" rowspan="1">0-3: Reserved</td>
+            <td align="left" colspan="1" rowspan="1">0-3: Unassigned</td>
             <td align="left" colspan="1" rowspan="1">
               <xref target="RFC5015" format="default" sectionFormat="of" derivedContent="RFC5015"/></td>
           </tr>
@@ -389,14 +363,14 @@
           <tr>
             <td align="left" colspan="1" rowspan="1">11</td>
             <td align="left" colspan="1" rowspan="1">ECMP Redirect</td>
-            <td align="left" colspan="1" rowspan="1">0-7: Reserved</td>
+            <td align="left" colspan="1" rowspan="1">0-7: Unassigned</td>
             <td align="left" colspan="1" rowspan="1">
               <xref target="RFC6754" format="default" sectionFormat="of" derivedContent="RFC6754"/></td>
           </tr>
           <tr>
             <td rowspan="2" align="left" colspan="1">12</td>
             <td rowspan="2" align="left" colspan="1">PIM Flooding Mechanism</td>
-            <td align="left" colspan="1" rowspan="1">0-6: Reserved</td>
+            <td align="left" colspan="1" rowspan="1">0-6: Unassigned</td>
             <td align="left" colspan="1" rowspan="1">
               <xref target="RFC8364" format="default" sectionFormat="of" derivedContent="RFC8364"/></td>
           </tr>
@@ -409,7 +383,7 @@
             <td align="left" colspan="1" rowspan="1">13.0-15.15</td>
             <td align="left" colspan="1" rowspan="1">Unassigned</td>
             <td align="left" colspan="1" rowspan="1">0-3: Unassigned</td>
-            <td align="left" colspan="1" rowspan="1">RFC 8736</td>
+            <td align="left" colspan="1" rowspan="1">[This document]</td>
           </tr>
         </tbody>
       </table>
@@ -643,6 +617,25 @@
           <seriesInfo name="RFC" value="8364"/>
           <seriesInfo name="DOI" value="10.17487/RFC8364"/>
         </reference>
+        <reference anchor="RFC8736" target="https://www.rfc-editor.org/info/rfc8736">
+<front>
+<title>PIM Message Type Space Extension and Reserved Bits</title>
+<author fullname="S. Venaas" initials="S." surname="Venaas"/>
+<author fullname="A. Retana" initials="A." surname="Retana"/>
+<date month="February" year="2020"/>
+<abstract>
+<t>
+The PIM version 2 messages share a common message header format. The common header definition contains eight reserved bits. This document specifies how these bits may be used by individual message types and creates a registry containing the per-message-type usage. This document also extends the PIM type space by defining three new message types. For each of the new types, four of the previously reserved bits are used to form an extended type range.
+</t>
+<t>
+This document updates RFCs 7761 and 3973 by defining the use of the currently Reserved field in the PIM common header. This document further updates RFCs 7761 and 3973, along with RFCs 5015, 5059, 6754, and 8364, by specifying the use of the currently reserved bits for each PIM message.
+</t>
+<t>This document obsoletes RFC 6166.</t>
+</abstract>
+</front>
+<seriesInfo name="RFC" value="8736"/>
+<seriesInfo name="DOI" value="10.17487/RFC8736"/>
+</reference>
       </references>
     </references>
     <section anchor="authors-addresses" numbered="false" removeInRFC="false" toc="include" pn="section-appendix.a">

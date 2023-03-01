@@ -9,7 +9,7 @@
 <rfc
   xmlns:xi="http://www.w3.org/2001/XInclude"
   category="std"
-  docName="draft-venaas-rfc8736bis-00"
+  docName="draft-venaas-pim-rfc8736bis-00"
   ipr="trust200902"
   obsoletes="8736"
   updates="3973, 5015, 5059, 6754, 7761, 8364"
@@ -20,7 +20,7 @@
 
   <front>
     <title abbrev="PIM Type Extension and Reserved Bits">PIM Message Type Space Extension and Reserved Bits</title>
-    <seriesInfo name="Internet-Draft" value="draft-venaas-rfc8736bis-00"/>
+    <seriesInfo name="Internet-Draft" value="draft-venaas-pim-rfc8736bis-00"/>
     <author fullname="Stig Venaas" initials="S." surname="Venaas">
       <organization showOnFrontPage="true">Cisco Systems, Inc.</organization>
       <address>

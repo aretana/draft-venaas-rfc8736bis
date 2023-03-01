@@ -17,7 +17,7 @@
   xml:lang="en"
   version="3"
   consensus="true">
-  
+
   <front>
     <title abbrev="PIM Type Extension and Reserved Bits">PIM Message Type Space Extension and Reserved Bits</title>
     <seriesInfo name="Internet-Draft" value="draft-venaas-rfc8736bis-00"/>
@@ -49,7 +49,7 @@
         <uri/>
       </address>
     </author>
-    <date month="03" year="2023"/>
+    <date year="2023"/>
     <area>Routing</area>
     <keyword>Multicast</keyword>
     <abstract pn="section-abstract">

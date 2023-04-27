@@ -9,7 +9,7 @@
 <rfc
   xmlns:xi="http://www.w3.org/2001/XInclude"
   category="std"
-  docName="draft-ietf-pim-rfc8736bis-00"
+  docName="draft-ietf-pim-rfc8736bis-01"
   ipr="trust200902"
   obsoletes="8736"
   updates="3973, 5015, 5059, 6754, 7761, 8364"
@@ -20,7 +20,7 @@
 
   <front>
     <title abbrev="PIM Type Extension and Reserved Bits">PIM Message Type Space Extension and Reserved Bits</title>
-    <seriesInfo name="Internet-Draft" value="draft-ietf-pim-rfc8736bis-00"/>
+    <seriesInfo name="Internet-Draft" value="draft-ietf-pim-rfc8736bis-01"/>
     <author fullname="Stig Venaas" initials="S." surname="Venaas">
       <organization showOnFrontPage="true">Cisco Systems, Inc.</organization>
       <address>
@@ -58,20 +58,17 @@
         The PIM version 2 messages share a common message header format. The
         common header definition contains eight reserved bits. This document
         specifies how these bits may be used by individual message types and
-        creates a registry containing the per-message-type usage. This document
-        also extends the PIM type space by defining three new message types.
-        For each of the new types, four of the previously reserved bits are
-        used to form an extended type range.
+        extends the PIM type space.
       </t>
       <t>
-        This document updates RFCs 7761 and 3973 by defining the use of the
+        This document updates RFC7761 and RFC3973 by defining the use of the
         currently Reserved field in the PIM common header. This document
-        further updates RFCs 7761 and 3973, along with RFCs 5015, 5059, 6754,
-        and 8364, by specifying the use of the currently reserved bits for each
-        PIM message.
+        further updates RFC7761 and RFC3973, along with RFC5015, RFC5059,
+        RFC6754, and RFC8364, by specifying the use of the currently reserved
+        bits for each PIM message.
       </t>
       <t>
-        This document obsoletes RFC 8736.
+        This document obsoletes RFC8736.
       </t>
     </abstract>
   </front>
@@ -87,11 +84,11 @@
         specifying that these bits are to be used per message type.
       </t>
       <t>
-        This document refers to the bits specified as "reserved" in the common
+        This document refers to the bits in the Reserved field of the common
         PIM header <xref target="RFC7761"/> as "PIM message type Flag Bits" or,
         simply, "Flag Bits", and it specifies that they are to be separately
-        used on a per-message-type basis. It creates a registry containing the
-        per-message-type usage.
+        used on a per-message-type basis. It updates the "PIM Message Types"
+        registry to indicate the per-message-type usage.
       </t>
       <t>
         This document updates <xref target="RFC7761"/> and

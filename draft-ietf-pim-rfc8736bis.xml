@@ -9,7 +9,7 @@
 <rfc
   xmlns:xi="http://www.w3.org/2001/XInclude"
   category="std"
-  docName="draft-ietf-pim-rfc8736bis-02"
+  docName="draft-ietf-pim-rfc8736bis-03"
   ipr="trust200902"
   obsoletes="8736"
   updates="3973, 5015, 5059, 6754, 7761, 8364"
@@ -20,7 +20,7 @@
 
   <front>
     <title abbrev="PIM Type Extension and Reserved Bits">PIM Message Type Space Extension and Reserved Bits</title>
-    <seriesInfo name="Internet-Draft" value="draft-ietf-pim-rfc8736bis-02"/>
+    <seriesInfo name="Internet-Draft" value="draft-ietf-pim-rfc8736bis-03"/>
     <author fullname="Stig Venaas" initials="S." surname="Venaas">
       <organization showOnFrontPage="true">Cisco Systems, Inc.</organization>
       <address>
@@ -202,13 +202,19 @@
     <section anchor="ext" numbered="true" toc="include" removeInRFC="false">
       <name>PIM Type Space Extension</name>
       <t>
-        This document defines types 13, 14, and 15, such that each of these
-        types has 16 subtypes, providing a total of 48 subtypes available for
-        future PIM extensions. This is achieved by defining a new Subtype field
-        (see <xref target="subtypes"/>) using the four most significant flag
-        bits (bits 4-7). The notation type.subtype is used to reference these
-        new extended types. The remaining four flag bits (bits 0-3, abbreviated
-        as FB below) are to be defined by each extended type.
+        This document extends types 13, 14, and 15 such that each becomes 16
+        new types, resulting in 48 types available for future PIM extensions.
+        This extension is achieved by defining a new Subtype field (see
+        <xref target="subtypes"/>) using the four most significant flag bits
+        (bits 4-7). The notation type.subtype is used to reference the new
+        extended types. The remaining four flag bits (bits 0-3, abbreviated as
+        FB below) are to be defined by each extended type.
+      </t>
+      <t>
+        Each of the new extended types is represented by the eight bits
+        resulting from the concatenation of the Type and Subtype fields.  No
+        relationship is expected or implied between extended type messages with
+        a common Type field.
       </t>
       <figure anchor="subtypes" align="left" suppress-title="false">
         <name>Subtypes</name>

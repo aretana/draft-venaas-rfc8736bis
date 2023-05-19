@@ -9,7 +9,7 @@
 <rfc
   xmlns:xi="http://www.w3.org/2001/XInclude"
   category="std"
-  docName="draft-ietf-pim-rfc8736bis-03"
+  docName="draft-ietf-pim-rfc8736bis-04"
   ipr="trust200902"
   obsoletes="8736"
   updates="3973, 5015, 5059, 6754, 7761, 8364"
@@ -20,7 +20,7 @@
 
   <front>
     <title abbrev="PIM Type Extension and Reserved Bits">PIM Message Type Space Extension and Reserved Bits</title>
-    <seriesInfo name="Internet-Draft" value="draft-ietf-pim-rfc8736bis-03"/>
+    <seriesInfo name="Internet-Draft" value="draft-ietf-pim-rfc8736bis-04"/>
     <author fullname="Stig Venaas" initials="S." surname="Venaas">
       <organization showOnFrontPage="true">Cisco Systems, Inc.</organization>
       <address>
@@ -243,9 +243,13 @@
         which flag bits are defined for use by each of the PIM message types,
         and changes their registration status to Unassigned, as shown in
         <xref target="PIM-registry"/>. The registration policy remains IETF
-        Review <xref target="RFC8126"/>. Assignments into this registry
+        Review <xref target="RFC8126"/>. Assignments to this registry
         <bcp14>MUST</bcp14> define any non-default usage (see
         <xref target="flagbits"/>) of the flag bits in addition to the type.
+      </t>
+      <t>
+        Extended type 15.15 is Reserved <xref target="RFC8126"/> for future
+        extensions.
       </t>
       <t>
         Because this document obsoletes RFC 8736, IANA is asked to change all
@@ -373,9 +377,15 @@
               <xref target="RFC8364"/></td>
           </tr>
           <tr>
-            <td align="left" colspan="1" rowspan="1">13.0-15.15</td>
+            <td align="left" colspan="1" rowspan="1">13.0-15.14</td>
             <td align="left" colspan="1" rowspan="1">Unassigned</td>
             <td align="left" colspan="1" rowspan="1">0-3: Unassigned</td>
+            <td align="left" colspan="1" rowspan="1">[This document]</td>
+          </tr>
+          <tr>
+            <td align="left" colspan="1" rowspan="1">15.15</td>
+            <td align="left" colspan="1" rowspan="1">Reserved</td>
+            <td align="left" colspan="1" rowspan="1">0-3: Reserved</td>
             <td align="left" colspan="1" rowspan="1">[This document]</td>
           </tr>
         </tbody>
